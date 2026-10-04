@@ -1,10 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function FriendCard({ friend }) {
-  const { picture, name, days_since_contact, tags, status } = friend;
+  const { id, picture, name, days_since_contact, tags, status } = friend;
 
   return (
-    <article className="p-6 flex flex-col gap-2 items-center rounded-lg bg-white shadow-sm cursor-pointer">
+    <Link
+      href={`/friends/${id}`}
+      className="p-6 flex flex-col gap-2 items-center rounded-lg bg-white shadow-sm cursor-pointer"
+    >
       <Image
         className="mb-1 rounded-full"
         src={picture}
@@ -29,7 +33,7 @@ function FriendCard({ friend }) {
       >
         {status}
       </p>
-    </article>
+    </Link>
   );
 }
 
