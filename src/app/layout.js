@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <header>
           <Navbar />
         </header>
-        {children}
+        <main className="w-6xl mx-auto">{children}</main>
         <Footer />
       </body>
     </html>
